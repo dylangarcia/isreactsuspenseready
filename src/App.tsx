@@ -26,7 +26,7 @@ class App extends React.Component {
           height="100"
           width="100"
         />
-        <Text>Still loading...</Text>
+        <Text>Loading...</Text>
       </Background>
     );
   }
