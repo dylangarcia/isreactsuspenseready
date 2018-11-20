@@ -1,0 +1,8 @@
+{
+  "presets": ["latest", "stage-2", "typescript"],
+  "plugins": [
+    "styled-components",
+    "babel-plugin-styled-components",
+    "transform-class-properties"
+  ]
+}
