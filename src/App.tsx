@@ -16,8 +16,27 @@ const Text = styled.div`
   font-size: 18px;
 `;
 
-class App extends React.Component {
+interface IState {
+  hasTimeElapsed: boolean;
+}
+
+class App extends React.Component<{}, IState> {
+  state = {
+    hasTimeElapsed: false,
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        hasTimeElapsed: true,
+      });
+    }, 5000);
+  }
+
   render() {
+    const { hasTimeElapsed } = this.state;
+    const text = hasTimeElapsed ? 'No.' : 'Loading...';
+
     return (
       <Background>
         <Loader
@@ -26,7 +45,7 @@ class App extends React.Component {
           height="100"
           width="100"
         />
-        <Text>Loading...</Text>
+        <Text>{ text }</Text>
       </Background>
     );
   }
